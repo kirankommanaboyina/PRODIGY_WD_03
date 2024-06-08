@@ -1,0 +1,126 @@
+/* General styling for the game */
+* {
+    color: white;
+    font-family: sans-serif;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+}
+
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-image: url('https://th.bing.com/th/id/OIP.3DdOpa7rK4ylJ4Z_ms6WewHaFL?w=275&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7');
+    background-size: auto 170%;
+    background-position: left top;
+    background-color: #252A34;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    text-align: center;
+    padding-top: 5vh;
+}
+
+.turn-container {
+    width: 170px;
+    height: 80px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+}
+
+.turn-container h3 {
+    margin: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.turn-container .turn-box {
+    border: 3px solid #000;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.turn-container .turn-box:nth-child(even) {
+    border-right: none;
+}
+
+.bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 85px;
+    height: 40px;
+    background-color: #FF2E63;
+    z-index: -1;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 250px;
+    width: 250px;
+    margin: 30px auto;
+    border: 2px solid #000;
+}
+
+.box {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 700;
+    border: 2px solid #000;
+}
+
+.box:hover {
+    background-color: #FF2E63;
+}
+
+#play-again {
+    background-color: #FF2E63;
+    padding: 10px 25px;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+#play-again:hover {
+    padding: 10px 40px;
+    background-color: #08D9D6;
+    color: #000;
+}
+
+#paper-fall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.paper {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: paper-fall 5s ease-out infinite;
+}
+
+@keyframes paper-fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
